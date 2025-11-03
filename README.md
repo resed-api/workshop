@@ -1,4 +1,4 @@
-# CLI Minisite
+# CLI Conference Minisite
 
 Terminal-style conference website. Edit one Markdown file, get a working site.
 
@@ -29,6 +29,114 @@ You can also access sections directly:
 - `#/hotels`
 
 </details>
+
+
+## Setting Up a Conference Site
+
+### How to
+
+Setting up an instance is based on including the template as subtree. Follow the script below to get started.
+
+<details>
+<summary><h2>Script</h2></summary>
+
+```bash
+# 1. Create a new repository for your conference
+mkdir my-conference-2026
+cd my-conference-2026
+git init
+
+# 2. Create your configuration files
+cat > config.yml << 'EOF'
+# Conference Configuration
+conference:
+  title: "My Conference 2026"
+  subtitle: "Conference subtitle"
+  # ... (copy structure from example-config.yml)
+EOF
+
+cat > content.md << 'EOF'
+## About
+Conference description here...
+
+## Program
+Conference program details...
+EOF
+
+# 3. Add the template as a Git subtree
+git remote add cli-template https://github.com/pdaengeli/cli-minisite.git
+git fetch cli-template main
+git read-tree --prefix=template -u cli-template/main:template
+
+# 4. Create root package.json
+cat > package.json << 'EOF'
+{
+  "name": "my-conference-2026",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd template && npm install && node build.js"
+  }
+}
+EOF
+
+# 5. Add .gitignore
+cat > .gitignore << 'EOF'
+# Generated files
+index.html
+config.js
+sections.json
+temp.md
+node_modules/
+template/node_modules/
+*.backup
+*.bak
+EOF
+
+# 6. Build and test locally
+npm run build
+
+# 7. Commit and push
+git add -A
+git commit -m "Initial conference site setup"
+git remote add origin <your-repo-url>
+git push -u origin main
+```
+
+### File Structure
+
+```
+your-conference-repo/
+├── config.yml              # Conference configuration
+├── content.md              # Conference content (markdown)
+├── package.json            # Build script delegator
+├── .gitignore              # Ignore generated files
+└── template/               # Template files (via subtree)
+    ├── build.js
+    ├── css/
+    ├── js/
+    └── package.json
+```
+
+</details>
+
+### Enable GitHub Pages
+
+Before or immediately after your first push, enable GitHub Pages:
+
+1. Go to **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. The site will build and deploy automatically on every push to `main`
+
+### Updating the Template
+
+To pull template updates (CSS, JS, build system) without touching your conference content:
+
+```bash
+git subtree pull --prefix template cli-template main --squash
+```
+
+**Only edit:** `config.yml` and `content.md`. The template directory is managed via Git subtree.
 
 <details>
 <summary><h2>Extend the minisite</h2></summary>
@@ -69,18 +177,12 @@ Type these commands in the terminal:
 - `program` - Schedule and talks
 - `venue` - Location details
 
+The set of available commands depends on the sections defined in the configuration and content files.
+
 </details>
 
 <details>
-<summary><h2>Setup</h2></summary>
-
-### Enable GitHub Pages
-
-1. Go to **Settings** → **Pages**
-2. Source: **GitHub Actions**
-3. Push changes to trigger deployment
-
-### Local Development
+<summary><h2>Local Development</h2></summary>
 
 ```bash
 npm install

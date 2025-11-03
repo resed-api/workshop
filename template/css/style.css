@@ -173,6 +173,81 @@ body {
     overflow-x: auto;
 }
 
+/* Mobile Title - hidden by default */
+.mobile-title {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 2px solid var(--prompt-color);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    font-family: 'SF Mono', 'Monaco', 'Consolas', 'Courier New', monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+/* CRT scanline effect - REDUCED OPACITY for better readability */
+.mobile-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.03),
+        rgba(0, 0, 0, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.mobile-title h1,
+.mobile-title .subtitle,
+.mobile-title .dates,
+.mobile-title .mobile-instructions {
+    position: relative;
+    z-index: 2;
+}
+
+.mobile-title h1 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    color: var(--prompt-color);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--prompt-color);
+}
+
+.mobile-title .subtitle {
+    font-size: 16px;
+    margin: 0 0 15px 0;
+    color: var(--text-color);
+}
+
+.mobile-title .dates {
+    font-size: 14px;
+    margin: 0;
+    color: var(--text-dim);
+    padding-top: 10px;
+    border-top: 1px solid var(--text-dim);
+}
+
+.mobile-title .mobile-instructions {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--text-dim);
+    font-size: 14px;
+}
+
+.mobile-title .mobile-instructions p {
+    margin: 5px 0;
+}
+
 #terminal {
     max-width: 1200px;
     margin: 0 auto;
@@ -483,13 +558,13 @@ body {
     align-items: center;
     margin-top: 30px;
     padding: 15px;
-    background-color: var(--bg-color); /* CHANGED: solid background instead of transparent */
+    background-color: var(--bg-color);
     border: 2px solid var(--prompt-color);
     border-radius: 8px;
     position: sticky;
     bottom: 10px;
     box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
-    z-index: 100; /* ADD: ensure it's above content */
+    z-index: 100;
 }
 
 .prompt {
@@ -548,13 +623,13 @@ body {
     
     #terminal {
         padding: 5px;
-        padding-top: 10px; /* Much less padding */
+        padding-top: 10px;
     }
     
     .top-nav {
         padding: 5px;
         gap: 3px;
-        position: relative; /* Not sticky on mobile */
+        position: relative;
     }
     
     .nav-left {
@@ -572,9 +647,25 @@ body {
         font-size: 11px;
     }
     
-    /* Hide ASCII art on mobile */
+    /* Scale ASCII art to fit on small screens */
     .ascii-art {
-        display: none;
+        font-size: 6px;
+        line-height: 1.1;
+        transform-origin: top center;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 5px;
+    }
+    
+    /* Hide welcome box on mobile, show mobile title instead */
+    .output-block.help-text {
+        display: none !important;
+    }
+    
+    /* Show mobile title on mobile (unless .hidden) */
+    .mobile-title:not(.hidden) {
+        display: block !important;
     }
     
     #content-display {
@@ -603,7 +694,7 @@ body {
     
     .input-line {
         padding: 8px;
-        position: fixed; /* Fixed at bottom on mobile */
+        position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
@@ -617,6 +708,21 @@ body {
     
     #command-input {
         font-size: 13px;
+    }
+}
+
+/* Extra small screens - scale ASCII art even more */
+@media (max-width: 480px) {
+    .ascii-art {
+        font-size: 4px;
+        line-height: 1.05;
+    }
+}
+
+@media (max-width: 360px) {
+    .ascii-art {
+        font-size: 3px;
+        line-height: 1;
     }
 }
 

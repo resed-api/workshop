@@ -155,6 +155,17 @@ function generateIndexHtml(config) {
         <!-- ASCII Art Title -->
         <pre id="ascii-title" class="ascii-art">${asciiArt}</pre>
 
+        <!-- Mobile Title (shown on mobile instead of welcome box) -->
+        <div class="mobile-title hidden" id="mobile-title">
+            <h1>${config.conference.title}</h1>
+            <p class="subtitle">${config.conference.subtitle}</p>
+            <p class="dates">${config.conference.date} | ${config.conference.location}</p>
+            <div class="mobile-instructions">
+                <p>👆 Use the buttons above to navigate</p>
+                <p>💬 Or type commands below</p>
+            </div>
+        </div>
+
         <div id="output"></div>
         
         <!-- Content Display Area -->

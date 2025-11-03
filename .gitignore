@@ -1,0 +1,23 @@
+# Generated files - built by GitHub Actions
+index.html
+config.js
+sections.json
+temp.md
+
+# Dependencies
+node_modules/
+
+# Backups
+*.backup
+*.bak
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

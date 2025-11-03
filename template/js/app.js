@@ -4,6 +4,7 @@ const input = document.getElementById('command-input');
 const terminal = document.getElementById('terminal');
 const contentDisplay = document.getElementById('content-display');
 const promptText = document.getElementById('prompt-text');
+const mobileTitle = document.getElementById('mobile-title');
 
 let commandHistory = [];
 let historyIndex = -1;
@@ -72,9 +73,24 @@ function generateWelcomeMessage() {
     return message;
 }
 
+// Show mobile title (CSS controls visibility based on screen size)
+function showMobileTitle() {
+    if (mobileTitle) {
+        mobileTitle.classList.remove('hidden');
+    }
+}
+
+// Hide mobile title
+function hideMobileTitle() {
+    if (mobileTitle) {
+        mobileTitle.classList.add('hidden');
+    }
+}
+
 // Initialize
 window.addEventListener('DOMContentLoaded', async () => {
     printOutput(generateWelcomeMessage(), 'help-text');
+    showMobileTitle(); // CSS will control if it actually shows
     
     // Load content first, then check hash
     await loadContent();
@@ -87,7 +103,6 @@ window.addEventListener('DOMContentLoaded', async () => {
         const anchor = parts[1];
         
         if (sections[command]) {
-            // REMOVED: echoCommand(command); - Don't echo here, let executeCommand handle it
             executeCommand(command, false);
             
             // Scroll to anchor if present
@@ -276,6 +291,7 @@ function executeCommand(command, updateHash = true) {
         case 'help':
             showHelp();
             updatePrompt(null);
+            hideMobileTitle();
             break;
         case 'clear':
             output.innerHTML = '';
@@ -283,11 +299,13 @@ function executeCommand(command, updateHash = true) {
             contentDisplay.classList.add('hidden');
             updatePrompt(null);
             window.location.hash = '';
+            showMobileTitle();
             break;
         default:
             if (availableCommands.includes(command)) {
                 showSection(command);
                 updatePrompt(command);
+                hideMobileTitle();
             } else {
                 printOutput(`Command not found: ${command}. Type 'help' for available commands.`, 'error');
             }
@@ -304,6 +322,7 @@ function goHome() {
     printOutput(generateWelcomeMessage(), 'help-text');
     updatePrompt(null);
     window.location.hash = '';
+    showMobileTitle();
 }
 
 // Show help
@@ -399,7 +418,7 @@ function toggleMaximize(button) {
     contentDisplay.classList.toggle('maximized');
     
     if (contentDisplay.classList.contains('maximized')) {
-        button.innerHTML = '⤡'; // Restore icon (same, or use ⊡)
+        button.innerHTML = '⤡'; // Restore icon
         button.title = 'Restore content';
     } else {
         button.innerHTML = '⤢'; // Maximize icon
