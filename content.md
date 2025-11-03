@@ -21,6 +21,12 @@
 - Elena Spadini, elena.spadini@unibe.ch
 - Yann Stricker, yann.stricker@uzh.ch
 
+### Funding
+
+|  |  |
+|--|--|
+|<img src="https://www.swissuniversities.ch/_assets/feb1d86054ab2e718cccf9db6ed46074/Partials/Logo/Images/Logo.svg"/>||
+
 ## Program
 
 ### Day 1: January 29, 2026
