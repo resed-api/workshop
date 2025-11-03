@@ -1,0 +1,88 @@
+@media print {
+    /* Hide everything except content */
+    body * {
+        visibility: hidden;
+    }
+    
+    #content-display,
+    #content-display * {
+        visibility: visible;
+    }
+    
+    #content-display {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white !important;
+        border: none !important;
+        box-shadow: none !important;
+        max-height: none !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Force black text and proper colors for print */
+    #content-display,
+    #content-display * {
+        color: black !important;
+        background: white !important;
+    }
+    
+    #content-display a {
+        color: #0066cc !important;
+        text-decoration: underline !important;
+    }
+    
+    #content-display h1,
+    #content-display h2,
+    #content-display h3,
+    #content-display .content-title {
+        color: black !important;
+        page-break-after: avoid;
+    }
+    
+    #content-display p,
+    #content-display ul,
+    #content-display ol {
+        page-break-inside: avoid;
+    }
+    
+    /* Hide section link icons in print */
+    .section-link {
+        display: none !important;
+    }
+    
+    /* Ensure proper borders for title */
+    .content-title {
+        border-bottom: 3px solid black !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Table styling for print */
+    #content-display table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    #content-display th,
+    #content-display td {
+        border: 1px solid black !important;
+        padding: 8px !important;
+    }
+    
+    #content-display th {
+        background-color: #f0f0f0 !important;
+        font-weight: bold !important;
+    }
+    
+    /* Code blocks */
+    #content-display pre,
+    #content-display code {
+        border: 1px solid #ccc !important;
+        background-color: #f5f5f5 !important;
+        page-break-inside: avoid;
+    }
+}
