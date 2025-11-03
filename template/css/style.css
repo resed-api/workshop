@@ -659,7 +659,7 @@ body {
     }
     
     /* Hide welcome box on mobile, show mobile title instead */
-    .output-block.help-text {
+    .output-block.welcome-box {
         display: none !important;
     }
     

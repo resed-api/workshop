@@ -89,7 +89,7 @@ function hideMobileTitle() {
 
 // Initialize
 window.addEventListener('DOMContentLoaded', async () => {
-    printOutput(generateWelcomeMessage(), 'help-text');
+    printOutput(generateWelcomeMessage(), 'help-text welcome-box');
     showMobileTitle(); // CSS will control if it actually shows
     
     // Load content first, then check hash
@@ -319,7 +319,7 @@ function goHome() {
     output.innerHTML = '';
     contentDisplay.innerHTML = '';
     contentDisplay.classList.add('hidden');
-    printOutput(generateWelcomeMessage(), 'help-text');
+    printOutput(generateWelcomeMessage(), 'help-text welcome-box');
     updatePrompt(null);
     window.location.hash = '';
     showMobileTitle();
