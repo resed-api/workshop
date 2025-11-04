@@ -4,12 +4,9 @@
 
 **Re-use of editions and text collections: The role of APIs**
 
-*Workshop by the swissuniversities ORD *ReSED* project*
+*Workshop by the swissuniversities ORD (ReSED project)[https://search.usi.ch/projects/4476/re-use-standards-for-editions-data-with-application-programming-interfaces]*
 
-The project pursues two primary goals:
-
-- Explore ORD practices related to data-re-use and APIs within the field of editions;
-- Specify ORD standards based on the analysis of the needs and desiderata of the community.
+The workshop provides scholarly editors and other interested participants with a hands-on opportunity to learn how to use APIs on Day 1. On Day 2, participants will discuss real and potential cases of re-use of data from editions and text collections. After the workshop, the organisers will draft guidelines to support editors decide how to expose data in order to maximize its potential for reuse across different disciplines.
 
 **Dates:** Jan 29 and Jan 30, 2026  
 
@@ -26,17 +23,17 @@ The project pursues two primary goals:
 
 ### Funding
 
-<img height="125px" src="https://www.usi.ch/sites/default/files/styles/usi_xxlarge/public/storage/images/press-usi-immagini-logo.png?itok=2aRGgI8Y"/>
+<img height="150px" src="https://www.usi.ch/sites/default/files/styles/usi_xxlarge/public/storage/images/press-usi-immagini-logo.png?itok=2aRGgI8Y"/>
 <img height="125px" src="https://open-up-dse.github.io/img/univZurichLogoSmall.jpeg"/>
 <br/>
-<img height="125px" src="img/wbkolleg_englisch_2023.png"/>
-<img height="125px" src="img/DH_Farbe_png.png"/> 
+<img height="120px" src="img/wbkolleg_englisch_2023.png"/>
+<img height="120px" src="img/DH_Farbe_png.png"/> 
 <br/>
 <img height="125px" src="https://www.swissuniversities.ch/_assets/feb1d86054ab2e718cccf9db6ed46074/Partials/Logo/Images/Logo.svg"/>
 
 ## Program
 
-### Day 1: January 29, 2026
+### January 29, 2026: APIs for editions and text collections
 
 |||
 |---|---|
@@ -51,7 +48,7 @@ The project pursues two primary goals:
 
 --- 
 
-### Day 2: January 30, 2026
+### January 30, 2026: Re-use of editions and text collections
 
 |||||
 |---|---|---|---|
