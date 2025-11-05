@@ -19,6 +19,7 @@ venue:
 contact:
   email: "elena.chestnova@usi.ch"
   website: "TBD"
+  repository: "https://github.com/resed-api/workshop"
   
 terminal:
   hostname: "conference"
