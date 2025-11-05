@@ -359,6 +359,7 @@ Printing:
 
 Contact: ${config.contact.email || 'N/A'}
 Website: ${config.contact.website || 'N/A'}
+${config.contact.repository ? `Code base: ${config.contact.repository}` : ''}
 `;
     printOutput(helpText, 'help-text');
     contentDisplay.innerHTML = '';
