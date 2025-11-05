@@ -90,8 +90,9 @@ Check on campus map: [https://www.plaene.uzh.ch/KOL](https://www.plaene.uzh.ch/K
 
 ### Recommended Hotels
 
-- Hotel Plattenhof (Design & Boutique Hotel Plattenhof in Zürich - boutique Hotel buchung im Herzen der Stadt Zürich)
-- St. Josef (Ferienaufenthalt in Zürich: Familienhotel, Pension & ruhiges Hotel).
+- Hotel Plattenhof (Design & Boutique Hotel Plattenhof in Zurich - boutique Hotel tucked away in the quiet university neighborhood)
+- St. Josef (3-star superior boutique hotel St. Josef is a quiet, cozy boutique city hotel right in the center of Zurich)
+
 
 Please note that we do not have arrangements with these or other hotels.
 
