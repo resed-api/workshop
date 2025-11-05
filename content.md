@@ -69,8 +69,7 @@ The workshop provides scholarly editors and other interested participants with a
 
 The event is open to everyone and free of charge, but registration is mandatory.
 
-Please register [here](https://forms.office.com/e/qrxM9dWwHE).
-
+<a href="https://forms.office.com/e/qrxM9dWwHE" target="_blank" class="btn-primary btn-large">Please register here.</a>
 
 ## Venue
 
