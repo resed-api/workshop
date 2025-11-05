@@ -62,7 +62,7 @@ The workshop provides scholarly editors and other interested participants with a
 |15:30-16:15| Group reports |
 |16:15-16:30| Conclusions |
 
-\** Data re-use case studies by Matthieu Avanzi, Anne-Sophie Bories, Martin Grandjean, Jonathan Schaber, Christa Schneider, Michael Schonhardt, Ina Serif.
+\** Data re-use case studies by Matthieu Avanzi, Anne-Sophie Bories, Martin Grandjean, Jessica Rebecca Meierhofer, Petr Plecháč, Jonathan Schaber, Christa Schneider, Michael Schonhardt, Ina Serif.
 
 
 
