@@ -238,7 +238,7 @@ npm run build       # Rebuild the site
 
 Refresh browser to see the changes.
 
-### Updating the Template
+### Updating the Template (alternative to the `subtree` command given above)
 
 When there are updates to the template (CSS, JS, build system), it makes sense to update the local copy:
 
