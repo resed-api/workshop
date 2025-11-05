@@ -1,0 +1,10 @@
+{
+  "name": "@pdaengeli/cli-minisite-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CLI-style conference website template",
+  "scripts": {
+    "build": "cd template && node build.js",
+    "dev": "cd template && npm run dev"
+  }
+}
