@@ -1,6 +1,8 @@
 # CLI Conference Minisite
 
-Terminal-style conference website. Edit one Markdown file, get a working site.
+*Terminal-style conference website. Edit one Markdown file, get a working site.*
+
+Source repository: [`cli-minisite`](https://github.com/pdaengeli/cli-minisite)
 
 ## Quick Start
 
