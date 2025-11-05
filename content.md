@@ -53,9 +53,8 @@ The workshop provides scholarly editors and other interested participants with a
 
 |||||
 |---|---|---|---|
-|09:00-9:40| The ReSED API project |
-|9:40-10:00| Coffee break |
-|10:00-12:30| Data re-use case studies** |
+|09:00-9:30| The ReSED API project |
+|9:30-12:30| Data re-use case studies** + coffee break |
 |12:30-13:30| Lunch |
 |13:30-15:00| Group activity: re-use scenarios |
 |15:00-15:30| Coffee break |
@@ -68,7 +67,9 @@ The workshop provides scholarly editors and other interested participants with a
 
 ## Register
 
-*Information pending*
+The event is open to everyone and free of charge, but registration is mandatory.
+
+Please register [here](https://forms.office.com/e/qrxM9dWwHE).
 
 
 ## Venue
@@ -79,26 +80,23 @@ Rämistrasse 71
 
 6007 Zürich
 
-The conference will be held …
-
-
-Get a glimpse here: [https://www.uniability.uzh.ch/static/current/buildings/KOL/rooms/H-317](https://www.uniability.uzh.ch/static/current/buildings/KOL/rooms/H-317)
+[https://www.uniability.uzh.ch/static/current/buildings/KOL/rooms/H-317](https://www.uniability.uzh.ch/static/current/buildings/KOL/rooms/H-317)
 
 ![](img/map.png)
 
 Check on campus map: [https://www.plaene.uzh.ch/KOL](https://www.plaene.uzh.ch/KOL)
 
-### Getting There
-
-*Information pending*
 
 ## Hotels
 
 ### Recommended Hotels
 
-*Information pending*
+- Hotel Plattenhof (Design & Boutique Hotel Plattenhof in Zürich - boutique Hotel buchung im Herzen der Stadt Zürich)
+- St. Josef (Ferienaufenthalt in Zürich: Familienhotel, Pension & ruhiges Hotel).
+
+Please note that we do not have arrangements with these or other hotels.
+
+If you are a speaker and have questions regarding accommodation, please contact the [organisers](#/about).
 
 
-### Booking Tips
 
-[TBD]
