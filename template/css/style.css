@@ -526,6 +526,98 @@ body {
     display: none;
 } */
 
+/* Button Styles for Content Areas */
+
+/* Primary Button - for main CTAs like registration */
+#content-display .btn-primary,
+.btn-primary {
+    display: inline-block;
+    background-color: var(--content-heading);
+    color: var(--content-bg);
+    border: 2px solid var(--content-heading);
+    padding: 12px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+#content-display .btn-primary:hover,
+.btn-primary:hover {
+    background-color: var(--content-bg);
+    color: var(--content-heading);
+    border-color: var(--content-heading);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary Button - for less prominent actions */
+#content-display .btn-secondary,
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--content-heading);
+    border: 2px solid var(--content-heading);
+    padding: 12px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+#content-display .btn-secondary:hover,
+.btn-secondary:hover {
+    background-color: var(--content-heading);
+    color: var(--content-bg);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Terminal Style Button - matches the CLI aesthetic */
+#content-display .btn-terminal,
+.btn-terminal {
+    display: inline-block;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    padding: 12px 24px;
+    font-family: 'Courier New', 'Monaco', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+#content-display .btn-terminal:hover,
+.btn-terminal:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 255, 0, 0.3);
+}
+
+/* Button sizing variants */
+.btn-large {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
 /* Section Links */
 .section-link {
     font-size: 0.7em;
@@ -690,6 +782,13 @@ body {
     
     #content-display h3 {
         font-size: 15px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-terminal {
+        width: 100%;
+        padding: 14px 20px;
     }
     
     .input-line {
