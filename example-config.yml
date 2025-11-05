@@ -19,6 +19,7 @@ venue:
 contact:
   email: "info@f-b-b.org"
   website: "https://f-b-b.org"
+  repository: "https://github.com/pdaengeli/cli-minisite"
   
 terminal:
   hostname: "conference"
