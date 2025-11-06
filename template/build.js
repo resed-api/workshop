@@ -237,6 +237,32 @@ function generatePrintableHTML(config, sections) {
             border-bottom: 2px solid #333;
         }
         .conference-header h1 { margin-top: 0; }
+        
+        /* Image normalization for print */
+        .content-body img {
+            max-height: 120px !important;
+            max-width: 300px !important;
+            width: auto !important;
+            height: auto !important;
+            object-fit: contain;
+            vertical-align: middle;
+            margin: 10px;
+        }
+        
+        /* Group images on the same line nicely */
+        .content-body p {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* If a paragraph has only images, center them */
+        .content-body p:has(img):not(:has(:not(img):not(br))) {
+            text-align: center;
+        }
+        
         .document-footer {
             margin-top: 3em;
             padding-top: 1em;
@@ -254,12 +280,18 @@ function generatePrintableHTML(config, sections) {
             display: block;
             margin: 0 auto;
         }
+        
         @media print {
             .document-footer {
                 position: fixed;
                 bottom: 0;
                 width: 100%;
                 background: white;
+            }
+            
+            /* Ensure images don't break across pages */
+            .content-body img {
+                page-break-inside: avoid;
             }
         }
     </style>
