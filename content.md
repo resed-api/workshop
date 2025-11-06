@@ -51,10 +51,10 @@ The workshop provides scholarly editors and other interested participants with a
 
 ### January 30, 2026: Re-use of editions and text collections
 
-|||||
-|---|---|---|---|
+|||
+|---|---|
 |09:00-9:20| The ReSED API project |
-|9:20-10:40| Data re-use case studies** |
+|09:20-10:40| Data re-use case studies** |
 |10:40-11:10| Coffee break |
 |11:10-12:30| Data re-use case studies** |
 |12:30-13:30| Lunch |
@@ -64,7 +64,6 @@ The workshop provides scholarly editors and other interested participants with a
 |16:15-16:30| Conclusions |
 
 \** Data re-use case studies by Matthieu Avanzi, Anne-Sophie Bories, Martin Grandjean, Jessica Rebecca Meierhofer, Petr Plecháč, Jonathan Schaber, Christa Schneider, Michael Schonhardt, Ina Serif.
-
 
 
 ## Register
@@ -83,7 +82,7 @@ Rämistrasse 71
 
 [https://www.uniability.uzh.ch/static/current/buildings/KOL/rooms/H-317](https://www.uniability.uzh.ch/static/current/buildings/KOL/rooms/H-317)
 
-![](img/map.png)
+![Map showing Zurich station and the conference venue](img/map.png)
 
 Check on campus map: [https://www.plaene.uzh.ch/KOL](https://www.plaene.uzh.ch/KOL)
 
