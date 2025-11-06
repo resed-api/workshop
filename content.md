@@ -53,8 +53,10 @@ The workshop provides scholarly editors and other interested participants with a
 
 |||||
 |---|---|---|---|
-|09:00-9:30| The ReSED API project |
-|9:30-12:30| Data re-use case studies** + coffee break |
+|09:00-9:20| The ReSED API project |
+|9:20-10:40| Data re-use case studies** |
+|10:40-11:10| Coffee break |
+|11:10-12:30| Data re-use case studies** |
 |12:30-13:30| Lunch |
 |13:30-15:00| Group activity: re-use scenarios |
 |15:00-15:30| Coffee break |
