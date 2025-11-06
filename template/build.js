@@ -98,6 +98,12 @@ if (fs.existsSync(tempPath)) {
 fs.writeFileSync(outputSections, JSON.stringify(htmlSections, null, 2));
 console.log('✓ Generated sections.json');
 
+// Generate printable HTML version (always works)
+generatePrintableHTML(config, htmlSections);
+
+// Generate PDF from content.md (optional, requires LaTeX)
+generatePDF();
+
 // Generate config.js for frontend
 const configJs = `// Auto-generated configuration
 window.CONFERENCE_CONFIG = ${JSON.stringify(config, null, 2)};
@@ -138,6 +144,7 @@ function generateIndexHtml(config) {
             ${config.sections.map(section => 
                 `<button class="nav-btn" data-cmd="${section.id}">${section.icon} ${section.label}</button>`
             ).join('\n            ')}
+	    <button class="nav-btn" data-cmd="download">📥 Save</button>
             <button class="nav-btn" data-cmd="help">❓ Help</button>
             <button class="nav-btn" data-cmd="clear">🗑️ Clear</button>
         </div>
@@ -185,4 +192,146 @@ function generateIndexHtml(config) {
 
     fs.writeFileSync(outputHtml, template);
     console.log('✓ Generated index.html from config');
+}
+
+function generatePrintableHTML(config, sections) {
+    const allContent = Object.entries(sections)
+        .map(([key, html]) => {
+            const section = config.sections.find(s => s.id === key);
+            const label = section ? section.label : key;
+            return `<section><h1>${label}</h1>${html}</section>`;
+        })
+        .join('\n');
+    
+    // Get current date in DD-MM-YYYY format
+    const now = new Date();
+    const generatedDate = `${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth() + 1).padStart(2, '0')}-${now.getFullYear()}`;
+    
+    // Format conference dates
+    const conferenceDate = config.dates?.start && config.dates?.end 
+        ? `${config.dates.start} to ${config.dates.end}`
+        : config.dates?.year || 'TBA';
+    
+    // Get source URL from config (fallback to website or repository)
+    const sourceUrl = config.contact?.website || config.contact?.repository || 'https://yourconference.com';
+    
+    const printHtml = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${config.conference.title} - Full Program</title>
+    <link rel="stylesheet" href="template/css/print.css">
+    <style>
+        body { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        section { page-break-after: always; }
+        h1 { color: #333; margin-top: 2em; }
+        .conference-header {
+            text-align: center;
+            margin-bottom: 3em;
+            padding-bottom: 1em;
+            border-bottom: 2px solid #333;
+        }
+        .conference-header h1 { margin-top: 0; }
+        .document-footer {
+            margin-top: 3em;
+            padding-top: 1em;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            font-size: 0.85em;
+            color: #666;
+            page-break-inside: avoid;
+        }
+        #qrcode {
+            margin-top: 1em;
+            display: inline-block;
+        }
+        #qrcode img {
+            display: block;
+            margin: 0 auto;
+        }
+        @media print {
+            .document-footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="conference-header">
+        <h1>${config.conference.title}</h1>
+        <h2>${config.conference.subtitle}</h2>
+        <p>${conferenceDate} | ${config.venue?.city || config.conference.location || ''}</p>
+    </div>
+    ${allContent}
+    <div class="document-footer">
+        <p>${config.conference.title} — ${conferenceDate} — Generated on ${generatedDate} from <span id="source-url">${sourceUrl}</span></p>
+        <div id="qrcode"></div>
+        <p><small>Scan for latest updates</small></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script>
+        // Update URL to current page URL when opened
+        const actualUrl = window.location.origin + window.location.pathname.replace('/print.html', '');
+        document.getElementById('source-url').textContent = actualUrl;
+        
+        // Generate QR code with actual URL
+        var qr = qrcode(0, 'M');
+        qr.addData(actualUrl);
+        qr.make();
+        document.getElementById('qrcode').innerHTML = qr.createImgTag(3, 8);
+    </script>
+</body>
+</html>`;
+    
+    fs.writeFileSync(path.join(rootDir, 'print.html'), printHtml);
+    console.log('✓ Generated print.html with QR code');
+}
+
+function generatePDF() {
+    const pdfPath = path.join(rootDir, 'conference-content.pdf');
+    
+    // Get current date in DD-MM-YYYY format
+    const now = new Date();
+    const generatedDate = `${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth() + 1).padStart(2, '0')}-${now.getFullYear()}`;
+    
+    // Format conference dates
+    const conferenceDate = config.dates?.start && config.dates?.end 
+        ? `${config.dates.start} to ${config.dates.end}`
+        : config.dates?.year || 'TBA';
+    
+    // Get source URL from config
+    const sourceUrl = config.contact?.website || config.contact?.repository || 'https://yourconference.com';
+    
+    // Create footer text (escape for LaTeX)
+    const footerText = `${config.conference.title} — ${conferenceDate} — Generated on ${generatedDate} from ${sourceUrl}`
+        .replace(/&/g, '\\&')
+        .replace(/_/g, '\\_');
+    
+    try {
+        console.log('Attempting to generate PDF...');
+        
+        // Pandoc with custom footer using fancyhdr
+        const pandocCmd = `pandoc "${contentPath}" -o "${pdfPath}" \
+            --pdf-engine=xelatex \
+            -V geometry:margin=1in \
+            -V colorlinks=true \
+            -V title="${config.conference.title}" \
+            -V date="${conferenceDate}" \
+            -V header-includes="\\\\usepackage{fancyhdr}\\\\pagestyle{fancy}\\\\fancyfoot[C]{\\\\small\\\\textit{${footerText}}}"`;
+        
+        execSync(pandocCmd, { stdio: 'pipe' });
+        console.log('✓ Generated conference-content.pdf');
+    } catch (error) {
+        console.warn('⚠ PDF generation skipped (LaTeX not available)');
+        console.warn('  Install with: brew install --cask mactex (macOS)');
+        console.warn('  Download command will use print.html instead');
+    }
 }

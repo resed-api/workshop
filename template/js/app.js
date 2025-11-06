@@ -31,7 +31,7 @@ const config = window.CONFERENCE_CONFIG || {
 const sections = {};
 
 // Build available commands from config
-const availableCommands = ['home', ...config.sections.map(s => s.id), 'help', 'clear'];
+const availableCommands = ['home', ...config.sections.map(s => s.id), 'help', 'download', 'clear'];
 
 // Generate welcome message with dynamic padding
 function generateWelcomeMessage() {
@@ -293,6 +293,11 @@ function executeCommand(command, updateHash = true) {
             updatePrompt(null);
             hideMobileTitle();
             break;
+	case 'download':
+    	    downloadContent();
+    	    updatePrompt(null);
+    	    hideMobileTitle();
+    	    break;
         case 'clear':
             output.innerHTML = '';
             contentDisplay.innerHTML = '';
@@ -340,6 +345,7 @@ Available commands:
   home         Return to welcome screen
 ${commandList}
   help         Show this help message
+  download     Download full program (PDF or print version)
   clear        Clear the terminal screen
 
 Navigation:
@@ -362,6 +368,37 @@ Website: ${config.contact.website || 'N/A'}
 ${config.contact.repository ? `Code base: ${config.contact.repository}` : ''}
 `;
     printOutput(helpText, 'help-text');
+    contentDisplay.innerHTML = '';
+    contentDisplay.classList.add('hidden');
+}
+
+// Download PDF
+// Download content - prefers PDF, falls back to print.html
+function downloadContent() {
+    const pdfUrl = 'conference-content.pdf';
+    const htmlUrl = 'print.html';
+    
+    // Try PDF first
+    fetch(pdfUrl, { method: 'HEAD' })
+        .then(response => {
+            if (response.ok) {
+                // PDF available
+                printOutput(`✓ Downloading ${config.conference.title} - Full Program (PDF)`, 'success');
+                window.open(pdfUrl, '_blank');
+            } else {
+                // Fall back to print.html
+                printOutput(`✓ Opening printable version in new tab`, 'success');
+                printOutput(`  Use your browser's print function (Ctrl+P / Cmd+P) to save as PDF`, 'help-text');
+                window.open(htmlUrl, '_blank');
+            }
+        })
+        .catch(() => {
+            // Network error, try print.html as fallback
+            printOutput(`✓ Opening printable version in new tab`, 'success');
+            printOutput(`  Use your browser's print function (Ctrl+P / Cmd+P) to save as PDF`, 'help-text');
+            window.open(htmlUrl, '_blank');
+        });
+    
     contentDisplay.innerHTML = '';
     contentDisplay.classList.add('hidden');
 }
