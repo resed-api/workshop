@@ -220,7 +220,6 @@ function generatePrintableHTML(config, sections) {
 <head>
     <meta charset="UTF-8">
     <title>${config.conference.title} - Full Program</title>
-    <link rel="stylesheet" href="template/css/print.css">
     <style>
     body { 
         max-width: 800px; 
