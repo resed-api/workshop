@@ -222,108 +222,142 @@ function generatePrintableHTML(config, sections) {
     <title>${config.conference.title} - Full Program</title>
     <link rel="stylesheet" href="template/css/print.css">
     <style>
-        body { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 20px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        section { page-break-after: always; }
-        h1 { color: #333; margin-top: 2em; }
-        .conference-header {
-            text-align: center;
-            margin-bottom: 3em;
-            padding-bottom: 1em;
-            border-bottom: 2px solid #333;
-        }
-        .conference-header h1 { margin-top: 0; }
-        
-        /* Image normalization for print */
-        .content-body img {
-            max-height: 120px !important;
-            max-width: 450px !important;
-            width: auto !important;
-            height: auto !important;
-            object-fit: contain;
-            vertical-align: middle;
-            margin: 10px;
-        }
-        
-        /* Group images on the same line nicely */
-        .content-body p {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        /* If a paragraph has only images, center them */
-        .content-body p:has(img):not(:has(:not(img):not(br))) {
-            text-align: center;
-        }
-        
-        /* Table styling - clean and professional */
-        .content-body table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 1.5em 0;
-            page-break-inside: avoid;
-        }
-        
-        .content-body table td,
-        .content-body table th {
-            border: 1px solid #000;
-            padding: 8px 12px;
-            text-align: left;
-        }
-        
-        .content-body table th {
-            background-color: #f0f0f0;
-            font-weight: bold;
-        }
-        
-        /* Alternate row colors for better readability */
-        .content-body table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        
-        .content-body table tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-        
+    body { 
+        max-width: 800px; 
+        margin: 0 auto; 
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.6;
+    }
+    
+    section { 
+        page-break-after: always;
+        margin-bottom: 2em;
+    }
+    
+    h1 { 
+        color: #333; 
+        margin-top: 2em; 
+    }
+    
+    .conference-header {
+        text-align: center;
+        margin-bottom: 3em;
+        padding-bottom: 1em;
+        border-bottom: 2px solid #333;
+    }
+    
+    .conference-header h1 { 
+        margin-top: 0; 
+    }
+    
+    /* Image normalization for print - ONLY for image-containing paragraphs */
+    section img {
+        max-height: 120px !important;
+        max-width: 450px !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain;
+        vertical-align: middle;
+        margin: 10px;
+        display: inline-block;
+    }
+    
+    /* ONLY apply flex to paragraphs that contain images */
+    section p:has(> img) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    /* Regular paragraphs stay normal */
+    section p:not(:has(img)) {
+        display: block;
+        margin: 1em 0;
+    }
+    
+    /* Table styling - clean and professional */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 1.5em auto;
+        page-break-inside: avoid;
+    }
+    
+    table td,
+    table th {
+        border: 1px solid #000;
+        padding: 8px 12px;
+        text-align: left;
+    }
+    
+    table th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+    
+    /* Alternate row colors for better readability */
+    table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    
+    table tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+    
+    /* Links */
+    a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Lists */
+    ul, ol {
+        margin: 1em 0;
+        padding-left: 2em;
+    }
+    
+    .document-footer {
+        margin-top: 3em;
+        padding-top: 1em;
+        border-top: 1px solid #ccc;
+        text-align: center;
+        font-size: 0.85em;
+        color: #666;
+        page-break-inside: avoid;
+    }
+    
+    #qrcode {
+        margin-top: 1em;
+        display: inline-block;
+    }
+    
+    #qrcode img {
+        display: block;
+        margin: 0 auto;
+        max-height: none !important;
+        max-width: none !important;
+    }
+    
+    @media print {
         .document-footer {
-            margin-top: 3em;
-            padding-top: 1em;
-            border-top: 1px solid #ccc;
-            text-align: center;
-            font-size: 0.85em;
-            color: #666;
-            page-break-inside: avoid;
-        }
-        #qrcode {
-            margin-top: 1em;
-            display: inline-block;
-        }
-        #qrcode img {
-            display: block;
-            margin: 0 auto;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
         }
         
-        @media print {
-            .document-footer {
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                background: white;
-            }
-            
-            /* Ensure images and tables don't break across pages */
-            .content-body img,
-            .content-body table {
-                page-break-inside: avoid;
-            }
+        /* Ensure images and tables don't break across pages */
+        img, table {
+            page-break-inside: avoid;
         }
+    }
     </style>
 </head>
 <body>
