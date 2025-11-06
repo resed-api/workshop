@@ -251,7 +251,7 @@ function generatePrintableHTML(config, sections) {
         margin-top: 0; 
     }
     
-/* Image normalization for print - ONLY for image-containing paragraphs */
+    /* Image normalization for print - ONLY for image-containing paragraphs */
     section img {
     	max-height: 120px !important;
     	max-width: 450px !important;
@@ -263,7 +263,7 @@ function generatePrintableHTML(config, sections) {
     	display: inline-block;
     }
     
-/* Exception: Maps, diagrams, and other content images stay full-size */
+    /* Exception 1: Images with alt text containing keywords stay full-size */
     section img[alt*="map" i],
     section img[alt*="Map" i],
     section img[alt*="diagram" i],
@@ -273,6 +273,29 @@ function generatePrintableHTML(config, sections) {
     	max-width: 100% !important;
     	display: block;
     	margin: 1em auto;
+    }
+    
+    /* Exception 2: Images in figures with captions containing keywords stay full-size */
+    section figure:has(figcaption:is([data-caption*="map" i], [data-caption*="Map" i], [data-caption*="diagram" i])) img,
+    section figure:has(figcaption) img {
+    	max-height: none !important;
+    	max-width: 100% !important;
+    	display: block;
+     margin: 1em auto;
+    }
+    
+    /* Style figures nicely */
+    section figure {
+    	margin: 2em auto;
+    	text-align: center;
+    	page-break-inside: avoid;
+    }
+    
+    section figcaption {
+    	font-style: italic;
+    	color: #666;
+    	margin-top: 0.5em;
+    	font-size: 0.9em;
     }
     
     /* ONLY apply flex to paragraphs that contain images */
