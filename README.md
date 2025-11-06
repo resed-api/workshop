@@ -263,5 +263,20 @@ npm run build
 
 **Note:** GitHub Actions automatically uses the latest template when building, so local template updates are optional.
 
+### Optional: PDF generation at build time
+
+The build creates a PDF reflecting the whole `content.md` if the Pandoc instance has access to LaTeX. In the GitHub action this is not set up for performance reasons.
+
+Add it in an additional step if needed for the conference page:
+
+```yaml
+- name: Install LaTeX for PDF generation
+  run: |
+    sudo apt-get update
+    sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-latex-extra
+```
+
+The build will take ca. 3 minutes longer and create a considerably more voluminous artifact.
+
 </details>
 
