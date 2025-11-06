@@ -251,7 +251,7 @@ function generatePrintableHTML(config, sections) {
         margin-top: 0; 
     }
     
-    /* Image normalization for print - ONLY for image-containing paragraphs */
+    /* Image normalization for print */
     section img {
     	max-height: 120px !important;
     	max-width: 450px !important;
@@ -263,35 +263,35 @@ function generatePrintableHTML(config, sections) {
     	display: inline-block;
     }
     
-    /* Exception 1: Images with alt text containing keywords stay full-size */
+    /* Exception: Images with alt text keywords stay full-size */
     section img[alt*="map" i],
     section img[alt*="Map" i],
     section img[alt*="diagram" i],
     section img[alt*="Diagram" i],
+    section img[alt*="chart" i],
     section img[alt*="full" i] {
-    	max-height: none !important;
+   	max-height: none !important;
     	max-width: 100% !important;
     	display: block;
     	margin: 1em auto;
     }
     
-    /* Exception 2: Images in figures with captions containing keywords stay full-size */
-    section figure:has(figcaption:is([data-caption*="map" i], [data-caption*="Map" i], [data-caption*="diagram" i])) img,
-    section figure:has(figcaption) img {
+    /* Exception: Images in figure elements (with captions) stay full-size */
+    figure img {
     	max-height: none !important;
     	max-width: 100% !important;
     	display: block;
-     margin: 1em auto;
+    	margin: 0 auto;
     }
     
     /* Style figures nicely */
-    section figure {
+    figure {
     	margin: 2em auto;
     	text-align: center;
     	page-break-inside: avoid;
     }
     
-    section figcaption {
+    figcaption {
     	font-style: italic;
     	color: #666;
     	margin-top: 0.5em;
