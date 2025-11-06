@@ -20,6 +20,7 @@ Source repository: [`cli-minisite`](https://github.com/pdaengeli/cli-minisite)
 - 📝 Single Markdown file drives all content
 - 🔗 Direct URL access with hash routing
 - 📱 Mobile-friendly with fallback navigation
+- 📥 All contents printable/downloadable in document form
 - 🚀 Automated build and deployment with GitHub Actions
 
 ### Direct URLs

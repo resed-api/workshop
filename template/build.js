@@ -241,7 +241,7 @@ function generatePrintableHTML(config, sections) {
         /* Image normalization for print */
         .content-body img {
             max-height: 120px !important;
-            max-width: 300px !important;
+            max-width: 450px !important;
             width: auto !important;
             height: auto !important;
             object-fit: contain;
@@ -261,6 +261,35 @@ function generatePrintableHTML(config, sections) {
         /* If a paragraph has only images, center them */
         .content-body p:has(img):not(:has(:not(img):not(br))) {
             text-align: center;
+        }
+        
+        /* Table styling - clean and professional */
+        .content-body table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1.5em 0;
+            page-break-inside: avoid;
+        }
+        
+        .content-body table td,
+        .content-body table th {
+            border: 1px solid #000;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        .content-body table th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        
+        /* Alternate row colors for better readability */
+        .content-body table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .content-body table tr:nth-child(odd) {
+            background-color: #ffffff;
         }
         
         .document-footer {
@@ -289,8 +318,9 @@ function generatePrintableHTML(config, sections) {
                 background: white;
             }
             
-            /* Ensure images don't break across pages */
-            .content-body img {
+            /* Ensure images and tables don't break across pages */
+            .content-body img,
+            .content-body table {
                 page-break-inside: avoid;
             }
         }
