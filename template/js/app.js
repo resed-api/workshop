@@ -36,8 +36,8 @@ const availableCommands = ['home', ...config.sections.map(s => s.id), 'help', 'd
 // Generate welcome message with dynamic padding
 function generateWelcomeMessage() {
     const title = config.conference.title || 'Conference';
-    const dates = config.dates.start && config.dates.end 
-        ? `${config.dates.start} - ${config.dates.end}` 
+    const dates = config.dates.start && config.dates.end
+        ? `${config.dates.start} - ${config.dates.end}`
         : '';
     const city = config.venue.city || '';
     
@@ -332,7 +332,7 @@ function goHome() {
 
 // Show help
 function showHelp() {
-    const commandList = config.sections.map(s => 
+    const commandList = config.sections.map(s =>
         `  ${s.id.padEnd(12)} ${s.label}`
     ).join('\n');
     
@@ -568,3 +568,14 @@ setInterval(() => {
         setTimeout(() => input.classList.remove('pulse'), 1000);
     }
 }, 5000);
+
+// Global keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+    // ESC to exit maximized view
+    if (e.key === 'Escape' && contentDisplay.classList.contains('maximized')) {
+        const maximizeBtn = contentDisplay.querySelector('.content-maximize-btn');
+        if (maximizeBtn) {
+            toggleMaximize(maximizeBtn);
+        }
+    }
+});
