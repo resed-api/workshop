@@ -97,7 +97,7 @@ Check on campus map: [https://www.plaene.uzh.ch/KOL](https://www.plaene.uzh.ch/K
 
 Please note that we do not have arrangements with these or other hotels.
 
-If you are a speaker and have questions regarding accommodation, please contact the [organisers](#/about#organisers).
+If you are a speaker and have questions regarding accommodation, please contact the [organisers](/#/about#organisers).
 
 
 
