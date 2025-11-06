@@ -251,16 +251,28 @@ function generatePrintableHTML(config, sections) {
         margin-top: 0; 
     }
     
-    /* Image normalization for print - ONLY for image-containing paragraphs */
+/* Image normalization for print - ONLY for image-containing paragraphs */
     section img {
-        max-height: 120px !important;
-        max-width: 450px !important;
-        width: auto !important;
-        height: auto !important;
-        object-fit: contain;
-        vertical-align: middle;
-        margin: 10px;
-        display: inline-block;
+    	max-height: 120px !important;
+    	max-width: 450px !important;
+    	width: auto !important;
+    	height: auto !important;
+    	object-fit: contain;
+    	vertical-align: middle;
+    	margin: 10px;
+    	display: inline-block;
+    }
+    
+/* Exception: Maps, diagrams, and other content images stay full-size */
+    section img[alt*="map" i],
+    section img[alt*="Map" i],
+    section img[alt*="diagram" i],
+    section img[alt*="Diagram" i],
+    section img[alt*="full" i] {
+    	max-height: none !important;
+    	max-width: 100% !important;
+    	display: block;
+    	margin: 1em auto;
     }
     
     /* ONLY apply flex to paragraphs that contain images */
