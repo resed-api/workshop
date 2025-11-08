@@ -690,6 +690,57 @@ body {
     color: var(--bg-color);
 }
 
+/* Make help / output text selectable and show text cursor */
+#output,
+#output * ,
+#output .output-block,
+#output .help-text,
+#output .command-echo,
+#output pre,
+#output code,
+#content-display,
+#content-display .content-body,
+#content-display .content-body * {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+    cursor: text !important;
+}
+
+/* Keep interactive controls non-selectable to avoid accidental selection */
+.nav-btn,
+#theme-toggle,
+#theme-menu,
+.input-line,
+#command-input,
+.content-maximize-btn,
+.section-link,
+summary {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+/* Make links in output/selectable content visually distinct and clickable */
+#output a,
+#content-display a,
+#output .help-text a {
+    color: var(--link-color);
+    text-decoration: underline;
+    cursor: pointer !important;
+}
+
+/* Ensure selection cursor remains text and selection allowed */
+#output, #content-display, #content-display .content-body {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+    cursor: text !important;
+}
+
 /* Pulse animation for inactive input */
 @keyframes pulse {
     0%, 100% {

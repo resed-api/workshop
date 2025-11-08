@@ -33,6 +33,22 @@ const sections = {};
 // Build available commands from config
 const availableCommands = ['home', ...config.sections.map(s => s.id), 'help', 'download', 'clear'];
 
+// Helper: escapeHtml and conservative linkify for help text only
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function linkify(text) {
+    const escaped = escapeHtml(text);
+    const withLinks = escaped.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+    return withLinks.replace(/\n/g, '<br>');
+}
+
 // Generate welcome message with dynamic padding
 function generateWelcomeMessage() {
     const title = config.conference.title || 'Conference';
@@ -367,7 +383,7 @@ Contact: ${config.contact.email || 'N/A'}
 Website: ${config.contact.website || 'N/A'}
 ${config.contact.repository ? `Code base: ${config.contact.repository}` : ''}
 `;
-    printOutput(helpText, 'help-text');
+    printHelpText(helpText);
     contentDisplay.innerHTML = '';
     contentDisplay.classList.add('hidden');
 }
@@ -503,6 +519,15 @@ function printOutput(text, className = '') {
     output.appendChild(outputDiv);
 }
 
+// Print help (sanitized, linkified)
+function printHelpText(rawText) {
+    const out = document.getElementById('output');
+    const block = document.createElement('div');
+    block.className = 'output-block help-text';
+    block.innerHTML = linkify(rawText);
+    out.appendChild(block);
+}
+
 // Scroll to bottom
 function scrollToBottom() {
     setTimeout(() => {
@@ -551,14 +576,27 @@ window.addEventListener('hashchange', async () => {
     }
 });
 
-// Keep input focused
+// Keep input focused when clicking outside interactive areas, but don't steal focus/selection
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('#theme-menu') && 
-        !e.target.closest('#theme-toggle') &&
-        !e.target.closest('.top-nav') &&
-        !e.target.closest('#content-display')) {
-        input.focus();
+    // If user clicked inside theme controls, top nav, content display or output, don't force-focus input.
+    if (e.target.closest('#theme-menu') ||
+        e.target.closest('#theme-toggle') ||
+        e.target.closest('.top-nav') ||
+        e.target.closest('#content-display') ||
+        e.target.closest('#output')) {
+        return;
     }
+    const cmd = document.getElementById('command-input');
+    if (cmd) cmd.focus();
+});
+
+// Defensive: do not focus input on mousedown (this would steal selection)
+document.addEventListener('mousedown', (e) => {
+    if (e.target.closest('#content-display') || e.target.closest('#output')) {
+        // allow native selection to proceed — do not change focus
+        return;
+    }
+    // otherwise no-op here; click handler will focus on click
 });
 
 // Make input more obvious - pulse animation
