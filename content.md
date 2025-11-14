@@ -45,7 +45,7 @@ The workshop provides scholarly editors and other interested participants with a
 |15:00-15:30| Coffee break |
 |15:30-17:00| APIs presentations* |
 
-\* APIs presentations by Ingo Börner, Elena Chestnova, Neil Jefferies, Matteo Romanello, Peter Stadler, Andreas Wagner. Chairs: tba.
+\* APIs presentations by Ingo Börner, Elena Chestnova, Neil Jefferies, Matteo Romanello, Peter Stadler, Andreas Wagner. Chairs: Marilena Daquino, Katharina Brückmann.
 
 --- 
 
