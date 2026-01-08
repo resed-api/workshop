@@ -78,7 +78,7 @@ The event is open to everyone and free of charge, but registration is mandatory.
 
 Rämistrasse 71
 
-6007 Zürich
+8006 Zürich
 
 [https://www.uniability.uzh.ch/static/current/buildings/KOL/rooms/H-317](https://www.uniability.uzh.ch/static/current/buildings/KOL/rooms/H-317)
 
