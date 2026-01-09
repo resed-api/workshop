@@ -60,8 +60,8 @@ The workshop provides scholarly editors and other interested participants with a
 |           | Ina Serif |
 |10:40-11:10| Coffee break |
 |11:10-12:30| Data re-use case studies |
-|           | Jessica Rebecca Meierhofer |
-|           | Jonathan Schaber |
+|           | Jessica Rebecca Meierhofer and Jonathan Schaber |
+|           | Christa Schneider "Re-using Edition Data for Historical Sociolinguistics: Practical Workflows and Methodological Needs" |
 |           | Michael Schonhardt |
 |12:30-13:30| Lunch |
 |13:30-15:00| Group activity: re-use scenarios |
