@@ -53,18 +53,23 @@ The workshop provides scholarly editors and other interested participants with a
 
 |||
 |---|---|
-|09:00-9:20| The ReSED API project |
-|09:20-10:40| Data re-use case studies** |
+|09:00-9:20| Report on stakeholder interviews |
+|09:20-10:40| Data re-use case studies |
+|           | Anne-Sophie Bories and Petr Plecháč |
+|           | Martin Grandjean |
+|           | Ina Serif |
 |10:40-11:10| Coffee break |
-|11:10-12:30| Data re-use case studies** |
+|11:10-12:30| Data re-use case studies |
+|           | Jessica Rebecca Meierhofer |
+|           | Jonathan Schaber |
+|           | Michael Schonhardt |
 |12:30-13:30| Lunch |
 |13:30-15:00| Group activity: re-use scenarios |
 |15:00-15:30| Coffee break |
 |15:30-16:15| Group reports |
 |16:15-16:30| Conclusions |
 
-\** Data re-use case studies by Matthieu Avanzi, Anne-Sophie Bories, Martin Grandjean, Jessica Rebecca Meierhofer, Petr Plecháč, Jonathan Schaber, Christa Schneider, Michael Schonhardt, Ina Serif.
-
+--- 
 
 ## Register
 
