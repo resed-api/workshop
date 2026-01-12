@@ -61,7 +61,7 @@ The workshop provides scholarly editors and other interested participants with a
 |11:10-12:30| Data re-use case studies |
 |           | Jessica Rebecca Meierhofer and Jonathan Schaber "Digital Editions of Medieval Gallo-Romance Documents for Linguistic Research" |
 |           | Christa Schneider "Re-using Edition Data for Historical Sociolinguistics: Practical Workflows and Methodological Needs" |
-|           | Michael Schonhardt |
+|           | Michael Schonhardt "Burchards Dekret Digital and the Digital Edition as a Machine Learning Interface" |
 |12:30-13:30| Lunch |
 |13:30-15:00| Group activity: re-use scenarios |
 |15:00-15:30| Coffee break |
