@@ -37,15 +37,14 @@ The workshop provides scholarly editors and other interested participants with a
 
 |||
 |---|---|
-|10:00-11:00| Welcome & Intro to APIs |
+|10:00-10:15| Welcome
+|10:15-11:00| Intro to APIs |
 |11:00-11:30| Coffee break |
 |11:30-12:30| How to design an API |
 |12:30-13:30| Lunch |
-|13:30-15:00| APIs presentations* |
+|13:30-15:00| APIs presentations: Matteo Romanello, Andreas Wagner, Neil Jefferies. Chair: Marilena Daquino |
 |15:00-15:30| Coffee break |
-|15:30-17:00| APIs presentations* |
-
-\* APIs presentations by Ingo Börner, Elena Chestnova, Neil Jefferies, Matteo Romanello, Peter Stadler, Andreas Wagner. Chairs: Marilena Daquino, Katharina Brückmann.
+|15:30-17:00| APIs presentations: Ingo Börner, Peter Stadler, Elena Chestnova and Sven Vermeul. Chair: Katharina Brückmann |
 
 --- 
 
