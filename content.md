@@ -54,7 +54,7 @@ The workshop provides scholarly editors and other interested participants with a
 |---|---|
 |09:00-9:20| Report on stakeholder interviews |
 |09:20-10:40| Data re-use case studies |
-|           | Anne-Sophie Bories and Petr Plecháč |
+|           | Anne-Sophie Bories and Petr Plecháč "Reusing a Poetry Corpus for the Study of Humour" |
 |           | Martin Grandjean |
 |           | Ina Serif |
 |10:40-11:10| Coffee break |
