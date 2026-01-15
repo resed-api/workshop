@@ -55,11 +55,11 @@ The workshop provides scholarly editors and other interested participants with a
 |09:00-9:20| Report on stakeholder interviews |
 |09:20-10:40| Data re-use case studies |
 |           | Anne-Sophie Bories and Petr Plecháč "Reusing a Poetry Corpus for the Study of Humour" |
-|           | Martin Grandjean |
+|           | Impresso tbc |
 |           | Ina Serif |
 |10:40-11:10| Coffee break |
 |11:10-12:30| Data re-use case studies |
-|           | Jessica Rebecca Meierhofer and Jonathan Schaber "Digital Editions of Medieval Gallo-Romance Documents for Linguistic Research" |
+|           | LiRI |
 |           | Christa Schneider "Re-using Edition Data for Historical Sociolinguistics: Practical Workflows and Methodological Needs" |
 |           | Michael Schonhardt "Burchards Dekret Digital and the Digital Edition as a Machine Learning Interface" |
 |12:30-13:30| Lunch |
