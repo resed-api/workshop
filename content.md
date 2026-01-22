@@ -54,7 +54,7 @@ The workshop provides scholarly editors and other interested participants with a
 |---|---|
 |09:00-9:20| Report on stakeholder interviews |
 |09:20-10:20| Data re-use case studies |
-|           | LiRI |
+|           | Gerold Schneider (LiRI) |
 |           | Christa Schneider "Re-using Edition Data for Historical Sociolinguistics: Practical Workflows and Methodological Needs" |
 |10:40-11:10| Coffee break |
 |10:40-12:10| Data re-use case studies |
