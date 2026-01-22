@@ -53,16 +53,15 @@ The workshop provides scholarly editors and other interested participants with a
 |||
 |---|---|
 |09:00-9:20| Report on stakeholder interviews |
-|09:20-10:40| Data re-use case studies |
-|           | Anne-Sophie Bories and Petr Plecháč "Reusing a Poetry Corpus for the Study of Humour" |
-|           | Impresso tbc |
-|           | Ina Serif |
-|10:40-11:10| Coffee break |
-|11:10-12:30| Data re-use case studies |
+|09:20-10:20| Data re-use case studies |
 |           | LiRI |
 |           | Christa Schneider "Re-using Edition Data for Historical Sociolinguistics: Practical Workflows and Methodological Needs" |
+|           |10:40-11:10| Coffee break |
+|10:40-12:10| Data re-use case studies |
+|           | Anne-Sophie Bories and Petr Plecháč "Reusing a Poetry Corpus for the Study of Humour" |
+|           | Ina Serif |
 |           | Michael Schonhardt "Burchards Dekret Digital and the Digital Edition as a Machine Learning Interface" |
-|12:30-13:30| Lunch |
+|12:10-13:30| Lunch |
 |13:30-15:00| Group activity: re-use scenarios |
 |15:00-15:30| Coffee break |
 |15:30-16:15| Group reports |
