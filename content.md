@@ -45,6 +45,7 @@ The workshop provides scholarly editors and other interested participants with a
 |13:30-15:00| APIs presentations: Matteo Romanello, Elena Chestnova and Sven Vermeul, Peter Stadler. Chair: Marilena Daquino |
 |15:00-15:30| Coffee break |
 |15:30-17:00| APIs presentations: Ingo Börner, Andreas Wagner, Neil Jefferies. Chair: Katharina Brückmann |
+|17:00 | Aperitif |
 
 --- 
 
