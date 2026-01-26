@@ -60,7 +60,7 @@ The workshop provides scholarly editors and other interested participants with a
 |10:40-11:10| Coffee break |
 |10:40-12:10| Data re-use case studies |
 |           | Anne-Sophie Bories and Petr Plecháč "Reusing a Poetry Corpus for the Study of Humour" |
-|           | Ina Serif |
+|           | Ina Serif "Digital editions and text collections and their reuse potential for historical research questions. Perspectives from teaching and research" |
 |           | Michael Schonhardt "Burchards Dekret Digital and the Digital Edition as a Machine Learning Interface" |
 |12:10-13:30| Lunch |
 |13:30-15:00| Group activity: re-use scenarios |
