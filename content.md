@@ -37,12 +37,12 @@ The workshop provides scholarly editors and other interested participants with a
 
 |||
 |---|---|
-|10:00-10:15| Welcome
-|10:15-11:00| Intro to APIs |
+|10:00-10:15| Welcome (Yann Stricker, Elena Chestnova)
+|10:15-11:00| [Intro to APIs](https://pad.dsl.unibe.ch/p/resed-api-20260129) (Peter Daengeli, Elena Spadini) |
 |11:00-11:30| Coffee break |
-|11:30-12:30| How to design an API |
+|11:30-12:30| How to design an API (Peter Daengeli, Elena Spadini) |
 |12:30-13:30| Lunch |
-|13:30-15:00| APIs presentations: Matteo Romanello, Elena Chestnova and Swen Vermeul, Peter Stadler. Chair: Marilena Daquino |
+|13:30-15:00| APIs presentations: Matteo Romanello, Elena Chestnova and Swen Vermeul, Peter Stadler. Chair: Marilena Daquino / Elena Spadini |
 |15:00-15:30| Coffee break |
 |15:30-17:00| APIs presentations: Ingo Börner, Andreas Wagner, Neil Jefferies. Chair: Katharina Brückmann |
 |17:00 | Aperitif |
@@ -62,7 +62,7 @@ The workshop provides scholarly editors and other interested participants with a
 |           | Anne-Sophie Bories and Petr Plecháč "Reusing a Poetry Corpus for the Study of Humour" |
 |           | Ina Serif "Digital editions and text collections and their reuse potential for historical research questions. Perspectives from teaching and research" | 
 |12:00-13:20| Lunch |
-|13:30-14:30| Group activity: re-use scenarios |
+|13:30-14:30| Group activity: re-use scenarios (directed by Federico Grasso Toro) |
 |14:30-15:00| Coffee break |
 |15:00-16:15| Group reports |
 |16:15-16:30| Conclusions |
@@ -73,7 +73,8 @@ The workshop provides scholarly editors and other interested participants with a
 
 The event is open to everyone and free of charge, but registration is mandatory.
 
-<a href="https://forms.office.com/e/qrxM9dWwHE" target="_blank" class="btn-primary btn-large">Please register here.</a>
+Registration closed.
+<!--<a href="https://forms.office.com/e/qrxM9dWwHE" target="_blank" class="btn-primary btn-large">Please register here.</a>-->
 
 ## Venue
 
